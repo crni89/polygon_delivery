@@ -1,0 +1,1279 @@
+{
+	"info": {
+		"_postman_id": "a9a7b69f-f6d9-4b7e-8ca9-bd35f2b68fea",
+		"name": "PIiVT aplikacija",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "10891291"
+	},
+	"item": [
+		{
+			"name": "Category",
+			"item": [
+				{
+					"name": "Get all",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{API_URL}}/api/category",
+							"host": [
+								"{{API_URL}}"
+							],
+							"path": [
+								"api",
+								"category"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get a single category",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{API_URL}}/api/category/1",
+							"host": [
+								"{{API_URL}}"
+							],
+							"path": [
+								"api",
+								"category",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add a new category",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Nova kategorija\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{API_URL}}/api/category",
+							"host": [
+								"{{API_URL}}"
+							],
+							"path": [
+								"api",
+								"category"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Edit a single category",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{ADMIN_AUTH_TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Kategorija A\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{API_URL}}/api/category/12",
+							"host": [
+								"{{API_URL}}"
+							],
+							"path": [
+								"api",
+								"category",
+								"12"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "Ingredient",
+			"item": [
+				{
+					"name": "Add a new ingredient",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Meso\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{API_URL}}/api/category/12/ingredient",
+							"host": [
+								"{{API_URL}}"
+							],
+							"path": [
+								"api",
+								"category",
+								"12",
+								"ingredient"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Edit a single ingredient",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Povrce\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{API_URL}}/api/category/12/ingredient/10",
+							"host": [
+								"{{API_URL}}"
+							],
+							"path": [
+								"api",
+								"category",
+								"12",
+								"ingredient",
+								"10"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete a single ingredient",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{API_URL}}/api/category/1/ingredient/1",
+							"host": [
+								"{{API_URL}}"
+							],
+							"path": [
+								"api",
+								"category",
+								"1",
+								"ingredient",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Administrator",
+			"item": [
+				{
+					"name": "Get all",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{API_URL}}/api/administrator",
+							"host": [
+								"{{API_URL}}"
+							],
+							"path": [
+								"api",
+								"administrator"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get a single administrator",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{API_URL}}/api/administrator/2",
+							"host": [
+								"{{API_URL}}"
+							],
+							"path": [
+								"api",
+								"administrator",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add a new administrator",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": \"administrator-dva\",\r\n    \"password\": \"Cista lozinka koja se Vidi 1234\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{API_URL}}/api/administrator",
+							"host": [
+								"{{API_URL}}"
+							],
+							"path": [
+								"api",
+								"administrator"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Edit an administrator",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"password\": \"2Abc1!e\",\r\n    \"isActive\": true\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{API_URL}}/api/administrator/2",
+							"host": [
+								"{{API_URL}}"
+							],
+							"path": [
+								"api",
+								"administrator",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Edit an administrator - only password",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"password\": \"2Abc1!e\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{API_URL}}/api/administrator/2",
+							"host": [
+								"{{API_URL}}"
+							],
+							"path": [
+								"api",
+								"administrator",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Edit an administrator - only status",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"isActive\": true\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{API_URL}}/api/administrator/2",
+							"host": [
+								"{{API_URL}}"
+							],
+							"path": [
+								"api",
+								"administrator",
+								"2"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Item",
+			"item": [
+				{
+					"name": "Get all items from a category",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{API_URL}}/api/category/1/item",
+							"host": [
+								"{{API_URL}}"
+							],
+							"path": [
+								"api",
+								"category",
+								"1",
+								"item"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get a single item",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{API_URL}}/api/category/1/item/3",
+							"host": [
+								"{{API_URL}}"
+							],
+							"path": [
+								"api",
+								"category",
+								"1",
+								"item",
+								"3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add a new item",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Item 3 - API added\",\r\n    \"description\": \"Najnovija stavka koja ima duzi naziv od 32 karaktera!\",\r\n    \"ingredientIds\": [ 3, 5 ],\r\n    \"sizes\": [\r\n        {\r\n            \"sizeId\": 1,\r\n            \"price\": 100.05,\r\n            \"kcal\": 89.45\r\n        },\r\n        {\r\n            \"sizeId\": 3,\r\n            \"price\": 200.10,\r\n            \"kcal\": 190.90\r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{API_URL}}/api/category/1/item",
+							"host": [
+								"{{API_URL}}"
+							],
+							"path": [
+								"api",
+								"category",
+								"1",
+								"item"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Edit an item",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Item 3 - API edited 1\",\r\n    \"description\": \"Najnovija stavka koja ima duzi naziv od 32 karaktera!!!\",\r\n    \"isActive\": true,\r\n    \"ingredientIds\": [ 1, 2, 4, 5 ],\r\n    \"sizes\": [\r\n        {\r\n            \"sizeId\": 1,\r\n            \"price\": 999.99,\r\n            \"kcal\": 99.99\r\n        },\r\n        {\r\n            \"sizeId\": 2,\r\n            \"price\": 3000.30,\r\n            \"kcal\": 300.50\r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{API_URL}}/api/category/1/item/7",
+							"host": [
+								"{{API_URL}}"
+							],
+							"path": [
+								"api",
+								"category",
+								"1",
+								"item",
+								"7"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete a single item",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{API_URL}}/api/category/1/item/7",
+							"host": [
+								"{{API_URL}}"
+							],
+							"path": [
+								"api",
+								"category",
+								"1",
+								"item",
+								"7"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Photo",
+			"item": [
+				{
+					"name": "Upload item photos",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "file1",
+									"type": "file",
+									"src": "/C:/Users/mtair/Desktop/slika1.jpg"
+								},
+								{
+									"key": "file2",
+									"type": "file",
+									"src": "/C:/Users/mtair/Desktop/slika2.jpg"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{API_URL}}/api/category/1/item/7/photo",
+							"host": [
+								"{{API_URL}}"
+							],
+							"path": [
+								"api",
+								"category",
+								"1",
+								"item",
+								"7",
+								"photo"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete a single photo",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{API_URL}}/api/category/3/item/10/photo/6",
+							"host": [
+								"{{API_URL}}"
+							],
+							"path": [
+								"api",
+								"category",
+								"3",
+								"item",
+								"10",
+								"photo",
+								"6"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Size",
+			"item": [
+				{
+					"name": "Get all",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{API_URL}}/api/size",
+							"host": [
+								"{{API_URL}}"
+							],
+							"path": [
+								"api",
+								"size"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get a single size",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{API_URL}}/api/size/1",
+							"host": [
+								"{{API_URL}}"
+							],
+							"path": [
+								"api",
+								"size",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add a new size",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"VIP valičina\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{API_URL}}/api/size",
+							"host": [
+								"{{API_URL}}"
+							],
+							"path": [
+								"api",
+								"size"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Edit a single size",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"VIP size\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{API_URL}}/api/size/4",
+							"host": [
+								"{{API_URL}}"
+							],
+							"path": [
+								"api",
+								"size",
+								"4"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "User",
+			"item": [
+				{
+					"name": "Get all users",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{API_URL}}/api/user",
+							"host": [
+								"{{API_URL}}"
+							],
+							"path": [
+								"api",
+								"user"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get a single user",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{API_URL}}/api/user/8",
+							"host": [
+								"{{API_URL}}"
+							],
+							"path": [
+								"api",
+								"user",
+								"8"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Register an account",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"test@test.com\",\r\n    \"password\": \"Lozinka1234567\",\r\n    \"forename\": \"Test\",\r\n    \"surname\": \"User\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{API_URL}}/api/user/register",
+							"host": [
+								"{{API_URL}}"
+							],
+							"path": [
+								"api",
+								"user",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Edit a single user",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"password\": \"Lozinka1234\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{API_URL}}/api/user/4",
+							"host": [
+								"{{API_URL}}"
+							],
+							"path": [
+								"api",
+								"user",
+								"4"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Active an account",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{API_URL}}/api/user/activate/5c732f34-4205-4a50-bd77-3bb5fe8fe21e",
+							"host": [
+								"{{API_URL}}"
+							],
+							"path": [
+								"api",
+								"user",
+								"activate",
+								"5c732f34-4205-4a50-bd77-3bb5fe8fe21e"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add a new address",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"streetAndNmber\": \"Danijelova 32\",\r\n    \"floor\": 1,\r\n    \"apartment\": 4,\r\n    \"city\": \"Beograd\",\r\n    \"phoneNumber\": \"+381113094094\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{API_URL}}/api/user/address",
+							"host": [
+								"{{API_URL}}"
+							],
+							"path": [
+								"api",
+								"user",
+								"address"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Edit user address",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"streetAndNmber\": \"Danijelova 32\",\r\n    \"floor\": 2,\r\n    \"city\": \"Beograd\",\r\n    \"phoneNumber\": \"+381113094095\",\r\n    \"isActive\": false\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{API_URL}}/api/user/address/1",
+							"host": [
+								"{{API_URL}}"
+							],
+							"path": [
+								"api",
+								"user",
+								"address",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "Administrator",
+					"item": [
+						{
+							"name": "Login",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"username\": \"administrator-dva\",\r\n    \"password\": \"Cista lozinka koja se Vidi 1234\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{API_URL}}/api/auth/administrator/login",
+									"host": [
+										"{{API_URL}}"
+									],
+									"path": [
+										"api",
+										"auth",
+										"administrator",
+										"login"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Refresh auth token",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoiYWRtaW5pc3RyYXRvciIsImlkIjo0LCJpZGVudGl0eSI6ImFkbWluaXN0cmF0b3ItZHZhIiwiaWF0IjoxNjUzOTI0NTc4LCJleHAiOjE2NTkxMDg1NzgsImlzcyI6IlBJaVZUIn0.LTk86kwjiKYlMl7u2Tz_E8oDcij8YXmCoK4fAGoRD2C7o_dE25yg5COrjKD4QrYFhk0zb5uEIMPr7u9IHmMXnxSb3bPJkSCpgOBYomf4R0jzv4uIujF61n6q7acMKGFmNbzhPPwhhPVpvUaTeRg0aGjJSfAVYguUJGbsbpkjJ1DEqh-TAZLjj6NQXowEk2sritibZzAY8W7RZ9qYEqi3yJoN8UYp306FuwdPLVnUde8KipuElsgJY1PFoBM5Xn3sIw7E77H1Nrf8tW7slG5ESzPlP8xdQO0cLtvZxJZr5gEsgxMX3FTZGNe_RV61HLRMkVGI4zl2OGQ93KwNVr-g8w",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "{{API_URL}}/api/auth/administrator/refresh",
+									"host": [
+										"{{API_URL}}"
+									],
+									"path": [
+										"api",
+										"auth",
+										"administrator",
+										"refresh"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "User",
+					"item": [
+						{
+							"name": "Login",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"email\": \"mtair@singidunum.ac.rs\",\r\n    \"password\": \"Lozinka1234567!\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{API_URL}}/api/auth/user/login",
+									"host": [
+										"{{API_URL}}"
+									],
+									"path": [
+										"api",
+										"auth",
+										"user",
+										"login"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Refresh auth token",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoidXNlciIsImlkIjo4LCJpZGVudGl0eSI6IlRlc3QgVXNlciIsImlhdCI6MTY1NDA4Mjc5NiwiZXhwIjoxNjU5MjY2Nzk2LCJpc3MiOiJQSWlWVCJ9.MnU7_bQRlt5lVRtFSCbdmLz706ZcuDRegOCggUuokkACyV_0oeCxh_-SbxbxvGQ5MbS8EtDxQQh2npv3s6eThNmdEFHcXhCTWwYCISLbOeITmPnmPgbzJuNoe4wYGrnWaAIBEatwYP0Ut3ft1SNlMTrbkP3qsFb4IEHFSSMOuiktVuDwETmDfUbMQapmewy0uIeYbmQuAfa_f92PosCY8FRar2nQStZHPXR3JjBwAXY9gCNc-b8nDOC_e2GyJ_Zr8GccLtzk29pQHNw_lcJME0qKM9Xcx8UxMa_RlSpGgvGkpZINujElShMen-nI0lHCjWu58gOFKn6UFqOEkbgC6w",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "{{API_URL}}/api/auth/user/refresh",
+									"host": [
+										"{{API_URL}}"
+									],
+									"path": [
+										"api",
+										"auth",
+										"user",
+										"refresh"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Request password reset code",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"email\": \"mtair@singidunum.ac.rs\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{API_URL}}/api/user/resetPassword",
+									"host": [
+										"{{API_URL}}"
+									],
+									"path": [
+										"api",
+										"user",
+										"resetPassword"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Use the password reset code",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{API_URL}}/api/user/reset/eb191200-088b-41fe-a5fc-2330a4693a5f-18564a69-8085-48d1-9f64-4b477cadb9ef",
+									"host": [
+										"{{API_URL}}"
+									],
+									"path": [
+										"api",
+										"user",
+										"reset",
+										"eb191200-088b-41fe-a5fc-2330a4693a5f-18564a69-8085-48d1-9f64-4b477cadb9ef"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Cart",
+			"item": [
+				{
+					"name": "Get cart",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{API_URL}}/api/cart",
+							"host": [
+								"{{API_URL}}"
+							],
+							"path": [
+								"api",
+								"cart"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add item to cart",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"itemId\": 3,\r\n    \"sizeId\": 1,\r\n    \"quantity\": 1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{API_URL}}/api/cart",
+							"host": [
+								"{{API_URL}}"
+							],
+							"path": [
+								"api",
+								"cart"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Edit item quantity in cart",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"itemId\": 3,\r\n    \"sizeId\": 1,\r\n    \"quantity\": 4\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{API_URL}}/api/cart",
+							"host": [
+								"{{API_URL}}"
+							],
+							"path": [
+								"api",
+								"cart"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete an item from cart",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"itemId\": 3,\r\n    \"sizeId\": 1,\r\n    \"quantity\": 0\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{API_URL}}/api/cart",
+							"host": [
+								"{{API_URL}}"
+							],
+							"path": [
+								"api",
+								"cart"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Order",
+			"item": [
+				{
+					"name": "Make an order",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"addressId\": 2,\r\n    \"deliverAt\": \"23:30\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{API_URL}}/api/cart/order",
+							"host": [
+								"{{API_URL}}"
+							],
+							"path": [
+								"api",
+								"cart",
+								"order"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get my orders",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{API_URL}}/api/order",
+							"host": [
+								"{{API_URL}}"
+							],
+							"path": [
+								"api",
+								"order"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Rate an order",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"value\": 4,\r\n    \"note\": \"Sve je bilo okej.\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{API_URL}}/api/order/5/rate",
+							"host": [
+								"{{API_URL}}"
+							],
+							"path": [
+								"api",
+								"order",
+								"5",
+								"rate"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Change order status",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"status\": \"canceled\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{API_URL}}/api/order/7/status",
+							"host": [
+								"{{API_URL}}"
+							],
+							"path": [
+								"api",
+								"order",
+								"7",
+								"status"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "{{USER_AUTH_TOKEN}}",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "API_URL",
+			"value": "http://localhost:10000",
+			"type": "default"
+		},
+		{
+			"key": "USER_AUTH_TOKEN",
+			"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoidXNlciIsImlkIjo4LCJpZGVudGl0eSI6IlRlc3QgVXNlciIsImlhdCI6MTY1NTExMTExNSwiZXhwIjoxNjU1MTk3NTE1LCJpc3MiOiJQSWlWVCJ9.JETpKmx6zowxdhSvE-mL0ASQyG6zJz716GZe4twMqTOOGo3b0LQvoAhharQkfcomi7nBN_HmY8161eMQPYcoPgxA3qsZ0z6nmIz3AavPd0Bdu-U-myDMB0eQOSiqT4yMkwLuE3gqtXyZsk8clIzEodvLFGU3wz27TkDOIGgGZBry3gvI9BZ_IbOsaFZZkwMrU39NPcxPpIiygoBXRxlS6hokXRodu48dnnSsMdRo3Fp4rqTnbmckQekXuyCqhzGUZg1CIbID6WpPAGRNbpPSVZUztchNEzmKTRWAHjMJjRmPm2fgrNJpHTlqZ1iCTv3Uv1sm8DW6oQnau3VsWeBcCQ",
+			"type": "default"
+		},
+		{
+			"key": "ADMIN_AUTH_TOKEN",
+			"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoiYWRtaW5pc3RyYXRvciIsImlkIjo0LCJpZGVudGl0eSI6ImFkbWluaXN0cmF0b3ItZHZhIiwiaWF0IjoxNjU0MDgzNjg4LCJleHAiOjE2NTQxNzAwODgsImlzcyI6IlBJaVZUIn0.RBc0WBIiNjWZ-WhviFauSO51s5nSLUMZxx3Xx0lbZUWjN0j7vymAqpJFdZfu5qxvXrszKLp_xmmMa2OjNwtvQvS5yzm0RME3SZCSYrV6NmhvflS1f9gNJxetgj1c1bhCV-e64IoM9nq9D8_Ub3FHi5w-PLllO-fwYOXy2vfppdtp2fNRsOQYVHakVI-ZGyYzf-wMs1j21m1EW4POxIcxx-wmqhERlfpTNBnXumbV5cAGZgAuKgEZjI-KhhXb92D6l_HeDs3kEJGQOuQgLMKeohPMRh6jVXYohLbvGvmQVPxxeqCQKkiXxeaLplPsjQUqu5u7h2NPPRB2SF3AMuky-g",
+			"type": "default"
+		}
+	]
+}
